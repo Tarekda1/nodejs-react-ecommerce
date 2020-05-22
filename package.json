@@ -1,0 +1,36 @@
+{
+  "name": "ecommerce-node",
+  "version": "1.0.0",
+  "description": "backend for the ecommerce app",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon --watch backend --exec babel-node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tarekda1/nodejs-react-ecommerce.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react",
+    "css3",
+    "javascript",
+    "reactjs",
+    "express"
+  ],
+  "author": "tarek da",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tarekda1/nodejs-react-ecommerce/issues"
+  },
+  "homepage": "https://github.com/Tarekda1/nodejs-react-ecommerce#readme",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
