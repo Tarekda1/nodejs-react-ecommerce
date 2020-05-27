@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { listProducts } from "../redux/products/productsActions";
 
 export const HomePage = () => {
-  //const [products, setProducts] = useState([]);
   const productList = useSelector((state) => state.productList);
   const { products, loading, error } = productList;
   const dispatch = useDispatch();

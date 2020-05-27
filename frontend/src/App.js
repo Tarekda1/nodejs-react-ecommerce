@@ -1,8 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { ProductPage } from "./pages/ProductPage";
+import { NoMatchPage } from "./pages/NoMatchPage";
 import "./App.css";
+import { Cart } from "./pages/Cart";
 
 function App() {
   const openMenu = (e) => {
@@ -15,7 +17,7 @@ function App() {
     }
   };
   return (
-    <BrowserRouter>
+    <Router>
       <div className="grid-container">
         <header className="header">
           <div className="brand">
@@ -23,7 +25,7 @@ function App() {
             <Link to="/">Amazona</Link>
           </div>
           <div className="header-links">
-            <a href="cart.html">Cart</a>
+            <a href="/cart">Cart</a>
             <a href="signin.html">Signin</a>
           </div>
         </header>
@@ -40,13 +42,17 @@ function App() {
         </aside>
         <main className="main">
           <div className="content">
-            <Route path="/products/:id" component={ProductPage} />
-            <Route path="/" exact component={HomePage} />
+            <Switch>
+              <Route path="/products/:id" component={ProductPage} />
+              <Route path="/cart" component={Cart} />
+              <Route path="/" exact component={HomePage} />
+              <Route component={NoMatchPage} />
+            </Switch>
           </div>
         </main>
         <footer className="footer">All rights reserved</footer>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 

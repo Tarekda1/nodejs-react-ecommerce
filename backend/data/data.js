@@ -10,6 +10,7 @@ export default {
       numReviews: "10",
       image: "/images/d1.jpg",
       description: "this is a description of the product",
+      countInStock: 0,
     },
     {
       _id: 2,
@@ -20,6 +21,7 @@ export default {
       rating: "4.5",
       numReviews: "10",
       image: "/images/d2.jpg",
+      countInStock: 4,
     },
     {
       _id: 3,
@@ -30,6 +32,7 @@ export default {
       rating: "4.5",
       numReviews: "10",
       image: "/images/d3.jpg",
+      countInStock: 3,
     },
     {
       _id: 4,
@@ -40,6 +43,7 @@ export default {
       rating: "4.5",
       numReviews: "10",
       image: "/images/d4.jpg",
+      countInStock: 5,
     },
     {
       _id: 5,
@@ -50,6 +54,7 @@ export default {
       rating: "4.5",
       numReviews: "10",
       image: "/images/d4.jpg",
+      countInStock: 2,
     },
     {
       _id: 6,
@@ -60,6 +65,13 @@ export default {
       rating: "4.5",
       numReviews: "10",
       image: "/images/d5.jpg",
+      countInStock: 1,
+    },
+  ],
+  cartDetails: [
+    {
+      _id: 6,
+      qty: 1,
     },
   ],
 };
