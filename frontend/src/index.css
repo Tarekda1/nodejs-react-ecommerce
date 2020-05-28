@@ -228,3 +228,98 @@ button.primary {
 .back {
   padding: 1rem;
 }
+
+/* Cart Screen */
+.cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.3rem 1.3rem 1.3rem;
+  flex: 0 1 800px;
+}
+
+.cart-outer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.6rem;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-list {
+  flex: 2;
+}
+.cart-list ul {
+  padding: 0 1.5rem 0 0;
+  margin: 0;
+}
+
+.cart-list ul li {
+  list-style-type: none;
+  border-bottom: 1px solid #cecece;
+  padding: 1rem 1rem 1rem 0;
+}
+
+.cart-item img {
+  width: 80px;
+}
+.cart-image {
+  padding-right: 1rem;
+}
+
+.pageHeader {
+  justify-self: start;
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 1rem;
+  margin: 0;
+}
+.checkout-action {
+  flex: 1;
+}
+.checkout-action ul,
+.checkout-action ul li {
+  padding: 0;
+  margin: 0;
+}
+.checkout-action ul li {
+  list-style-type: none;
+  padding: 0.5rem;
+}
+.checkout-action .inner {
+  border: 1px #cecece solid;
+  border-radius: 0.5rem;
+  background-color: #f8f8f8;
+  padding: 1rem;
+}
+.checkout-action .inner ul li > div {
+  margin-bottom: 0.5rem;
+}
+.checkout-action .inner button {
+  padding: 1rem;
+  border: 0.1rem #808080 solid;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+.cart-item-details > div {
+  padding-bottom: 0.5rem;
+}
+.cart-item-details > div > h4 {
+  margin: 0;
+}
+.cart-item-details .qty {
+  padding-right: 0.5rem;
+}
+
+.cart-item-details .buttonDelete {
+  outline: none;
+  background: none;
+  border: 0.1rem solid #cecece;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.3rem;
+  margin-left: 0.8rem;
+}

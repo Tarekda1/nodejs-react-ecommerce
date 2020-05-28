@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { detailsProduct } from "../redux/products/productsActions";
+import { addToCart } from "../redux/cart/cartActions";
 
 export const ProductPage = (props) => {
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
+  const cartAdd = useSelector((state) => state.cartAdd);
   const { product, loading, error } = productDetails;
+  const { response, addloading, addError } = cartAdd;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,8 +18,20 @@ export const ProductPage = (props) => {
     return () => {};
   }, []);
 
+  useEffect(() => {
+    if (response && response == 1) {
+      //update product
+      dispatch(detailsProduct(props.match.params.id, true));
+    }
+    return () => {};
+  }, [response]);
+
   const addToCartHandler = (e) => {
-    props.history.push(`/cart/${props.match.params.id}?qty=${qty}`);
+    if (!addloading && response == 1) {
+      props.history.push(`/cart/${props.match.params.id}?qty=${qty}`);
+    } else {
+      dispatch(addToCart(props.match.params.id, qty));
+    }
   };
 
   return (
@@ -77,8 +92,23 @@ export const ProductPage = (props) => {
                   </li>
                   <li>
                     {product.countInStock > 0 && (
-                      <button onClick={addToCartHandler} className="primary">
-                        Add to Cart
+                      <button
+                        disabled={addloading}
+                        onClick={addToCartHandler}
+                        className="primary"
+                      >
+                        {!loading &&
+                        !addloading &&
+                        response == 0 &&
+                        product.itemInCart === false
+                          ? "Add to Cart"
+                          : !loading &&
+                            addloading &&
+                            product.itemInCart === false
+                          ? "Adding to Cart..."
+                          : !addloading && product.itemInCart === true
+                          ? "Go to checkout"
+                          : "Add to cart"}
                       </button>
                     )}
                   </li>
