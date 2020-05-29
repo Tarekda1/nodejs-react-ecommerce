@@ -1,5 +1,7 @@
 import React from "react";
 
-export const NoMatchPage = () => {
+const NoMatchPage = () => {
   return <div>Page not found Oupss :(</div>;
 };
+
+export default NoMatchPage;
